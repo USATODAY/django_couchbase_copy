@@ -14,8 +14,8 @@ setup(
     license='MIT License',
     description='Django ORM for Couchbase.',
     long_description=README,
-    url='https://github.com/aswinkp/django-couchbase/',
-    download_url = 'https://github.com/aswinkp/django-couchbase/tarball/0.1',
+    url='https://github.com/USATODAY/django_couchbase_copy/',
+    download_url = 'https://github.com/USATODAY/django_couchbase_copy/tarball/0.1',
     author='Aswin Kumar K P',
     author_email='kp.aswinkumar@gmail.com',
     classifiers=[
