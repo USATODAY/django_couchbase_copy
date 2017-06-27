@@ -8,14 +8,14 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-couchbase',
-    version='0.1',
+    version='1.0.0',
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',
     description='Django ORM for Couchbase.',
     long_description=README,
     url='https://github.com/USATODAY/django_couchbase_copy/',
-    download_url = 'https://github.com/USATODAY/django_couchbase_copy/tarball/0.1',
+    download_url = 'https://github.com/USATODAY/django_couchbase_copy/tarball/1.0.0',
     author='Aswin Kumar K P',
     author_email='kp.aswinkumar@gmail.com',
     classifiers=[
