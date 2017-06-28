@@ -40,7 +40,7 @@ try:
 except Exception as e:
     from couchbase import Couchbase
 
-from couchbase import connection,exceptions
+from couchbase import exceptions, LOCKMODE_WAIT
 import couchbase
 
 log = logging.getLogger('django.couchbase')
@@ -76,12 +76,12 @@ class CouchbaseCache(BaseMemcachedCache):
 
         self._couchbase_cli = self._options.get('couchbase-cli', '')
         self._bucket = self._options.get('bucket', 'default')
-        client = self._lib.connect(  bucket= self._bucket,
+        client = self._lib.bucket(  bucket= self._bucket,
                                      host=host,
                                      password=self._options.get('password', ''),
                                      port=port,
                                      timeout=self._options.get('operation_timeout', 10 ),
-                                     lockmode=connection.LOCKMODE_WAIT, 
+                                     lockmode=LOCKMODE_WAIT,
                                      transcoder=self._options.get('transcoder', None ),
                                      experimental_gevent_support=self._options.get('gevent_support', False ) )
                                      
@@ -282,5 +282,3 @@ class CouchbaseCache(BaseMemcachedCache):
             
             log.error( "CouchbaseError: clear fail..: %s" % ( msg ) )
             return False
-            
-            
